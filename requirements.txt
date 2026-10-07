@@ -1,0 +1,50 @@
+# Python 3.11-3.12. Системная зависимость: poppler (для pdf2image).
+# Версии намеренно не зафиксированы (см. README).
+
+# ── Веб-интерфейс ───────────────────────────────────
+streamlit
+
+# ── PDF / изображения ───────────────────────────────
+pdf2image
+pypdf
+Pillow
+numpy
+
+# ── LLM / VLM клиенты ───────────────────────────────
+openai
+zai-sdk
+
+# ── Эмбеддинги и векторная БД ───────────────────────
+sentence-transformers
+fastembed
+qdrant-client
+# GigaChatEmbeddings (опциональный провайдер эмбеддингов)
+langchain-community
+gigachat
+
+# ── YOLO детекция таблиц/рисунков ───────────────────
+ultralytics
+opencv-python
+
+# ── NLP / морфология (склейка глав) ─────────────────
+pymorphy3
+
+# ── Данные и хранение ───────────────────────────────
+openpyxl
+python-dotenv
+yadisk
+
+# ── Docling: парсинг PDF-статей ─────────────────────
+docling
+
+# ── arXiv: поиск и скачивание статей ────────────────
+arxiv
+requests
+
+# ── Тесты ───────────────────────────────────────────
+pytest
+
+# ── Docling-сервер (server/docling_server.py), ставится там, где он запускается ──
+# fastapi
+# uvicorn
+# python-multipart

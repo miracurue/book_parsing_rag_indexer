@@ -1,0 +1,25 @@
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: qdrant_rag
+    ports:
+      - "6333:6333"   # REST API
+      - "6334:6334"   # gRPC API
+    volumes:
+      - ./data/vector_db:/qdrant/storage
+    restart: unless-stopped
+    # Graceful shutdown: даём Qdrant 30 сек на завершение транзакций
+    stop_grace_period: 30s
+    environment:
+      # Автоматическое создание снапшотов при остановке
+      - QDRANT__STORAGE__SNAPSHOTS_PATH=/qdrant/storage/snapshots
+      # WAL: фиксация каждые 5 сек (default 10, ускоряем)
+      - QDRANT__STORAGE__WAL__WAL_CAPACITY_MB=32
+      - QDRANT__STORAGE__PERFORMANCE__MAX_SEARCH_THREADS=0
+    # Healthcheck: помечает контейнер unhealthy если Qdrant упал
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:6333/healthz"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s

@@ -1,0 +1,39 @@
+# Секреты
+.env
+.streamlit/secrets.toml
+
+# Данные (локальные; сканы учебников защищены авторским правом)
+data/*
+!data/books/
+data/books/*
+!data/books/.gitkeep
+!data/articles/
+data/articles/*
+!data/articles/raw/
+data/articles/raw/*
+!data/articles/raw/.gitkeep
+!data/vector_db/
+data/vector_db/*
+!data/vector_db/.gitkeep
+
+# Векторная БД
+**/vector_db/*
+!data/vector_db/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# Логи и временные файлы
+*.log
+
+# ОС / IDE
+*:Zone.Identifier
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
