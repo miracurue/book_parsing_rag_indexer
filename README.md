@@ -175,12 +175,21 @@ docker-compose.yml          Qdrant
 
 ## Скриншоты
 
-TODO: добавить скриншоты интерфейса.
+Панель управления конвейером:
 
-- `docs/screenshots/preprocessing.png` - препроцессинг
-- `docs/screenshots/yolo_visual.png` - визуальный обзор YOLO-результатов
-- `docs/screenshots/postprocessing.png` - постпроцессинг
-- `docs/screenshots/vectorizer.png` - векторизация и коллекции Qdrant
+![Панель управления](docs/screenshots/dashboard.png)
+
+Распознавание страниц через VLM и YOLO-детекция:
+
+![AI-парсинг страниц](docs/screenshots/parsing.png)
+
+Постпроцессинг: чистка артефактов, склейка таблиц, главы, чанки:
+
+![Постпроцессинг](docs/screenshots/postprocessing.png)
+
+Векторизация (dense + sparse) и коллекции Qdrant:
+
+![Векторизация](docs/screenshots/vectorizer.png)
 
 ## Трудности и решения
 
